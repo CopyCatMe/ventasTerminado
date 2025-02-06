@@ -1,4 +1,3 @@
-{{-- Llamamos al componente de mi card --}}
 <x-card cardTitle="Detalles producto">
     <x-slot:cardTools>
         <a href="{{ route('products') }}" class="btn btn-primary">
@@ -18,7 +17,6 @@
                 <hr>
 
                 <div class="row">
-                    <!-- Caja stock -->
                     <div class="col-md-6">
                         <div class="info-box">
                             <span class="info-box-icon bg-info">
@@ -28,11 +26,9 @@
                                 <span class="info-box-text">Stock</span>
                                 <span class="info-box-number">{!! $product->stockLabel !!}</span>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
                     </div>
 
-                    <!-- Caja stock minimo-->
                     <div class="col-md-6">
                         <div class="info-box">
                             <span class="info-box-icon bg-info">
@@ -46,11 +42,9 @@
                                     </span>
                                 </span>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
                     </div>
 
-                    <!-- Caja categoria -->
                     <div class="col-md-6">
                         <div class="info-box">
                             <span class="info-box-icon bg-info">
@@ -61,11 +55,9 @@
                                 <span class="info-box-text">Categoria</span>
                                 <span class="info-box-number">{{ $product->category_id }}</span>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
                     </div>
 
-                    <!-- Caja estado -->
                     <div class="col-md-6">
                         <div class="info-box">
                             <span class="info-box-icon bg-info">
@@ -75,11 +67,9 @@
                                 <span class="info-box-text">Estado</span>
                                 <span class="info-box-number">{!! $product->activeLabel !!}</span>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
                     </div>
 
-                    <!-- Caja codigo barras -->
                     <div class="col-md-6">
                         <div class="info-box">
                             <span class="info-box-icon bg-info">
@@ -89,11 +79,9 @@
                                 <span class="info-box-text">Codigo barras</span>
                                 <span class="info-box-number">{{ $product->bar_code }}</span>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
                     </div>
 
-                    <!-- Caja fecha vencimiento -->
                     <div class="col-md-6">
                         <div class="info-box">
                             <span class="info-box-icon bg-info">
@@ -103,7 +91,6 @@
                                 <span class="info-box-text">Fecha vencimiento</span>
                                 <span class="info-box-number">{{ $product->expiration_date }}</span>
                             </div>
-                            <!-- /.info-box-content -->
                         </div>
                     </div>
                 </div>

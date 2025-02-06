@@ -56,18 +56,15 @@
             @endforelse
         </x-table>
 
-        {{-- Añadimos links de paginación --}}
         <x-slot:cardFooter>
             {{ $categories->links() }}
         </x-slot>
 
     </x-card>
 
-    {{-- Llamamos a nuestro modal --}}
     <x-modal modalId="modalCategory"
              modalTitle="Categorías">
 
-             {{-- Formulario para el modal --}}
              <form wire:submit={{ $Id == 0 ? "store" : "update($Id)" }}>
                 <div class="form-row">
                     <div class="form-group col-12">
@@ -79,7 +76,6 @@
                                class="form-control"
                                placeholder="Nombre Categoría:">
 
-                            {{-- Directiva de error en caso de validación errónea --}}
                                @error('name')
                                     <div class="alert alert-danger w-100 mt-2">
                                         {{ $message }}

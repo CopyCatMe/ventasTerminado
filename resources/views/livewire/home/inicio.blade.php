@@ -1,7 +1,6 @@
 <div>
     <h1>Inicio</h1>
 
-    {{-- Llamamos al componente de mi card --}}
     <x-card cardTitle="Card Title"
             cardTools="Card Tools"
             cardFooter="Card Footer">

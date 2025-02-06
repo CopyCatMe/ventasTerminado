@@ -1,5 +1,4 @@
 <div>
-    {{-- Llamo al componente de mi card --}}
     <x-card cardTitle="Listado productos ({{ $this->totalRegistros }})">
         <x-slot:cardTools>
             <a href="#" class="btn btn-primary" wire:click='create'>
@@ -61,13 +60,11 @@
             @endforelse
         </x-table>
 
-        {{-- Añadimos links de paginación --}}
         <x-slot:cardFooter>
             {{ $products->links() }}
         </x-slot>
 
     </x-card>
 
-    {{-- Llamada al modal --}}
     @include('products.modal')
 </div>

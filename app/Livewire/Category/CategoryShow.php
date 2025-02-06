@@ -13,7 +13,6 @@ class CategoryShow extends Component
 {
     use WithPagination;
 
-    //Obtenemos la categoria por la URL y la instanciamos en $category
     public Category $category;
 
     public function render()

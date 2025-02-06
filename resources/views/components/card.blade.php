@@ -1,4 +1,3 @@
-{{-- Inicializamos variables en vacío --}}
 @props(['cardTitle' => '',
         'cardTools' => '',
         'cardFooter' => ''])

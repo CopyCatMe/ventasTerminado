@@ -1,4 +1,3 @@
- {{-- Llamamos al componente de mi card --}}
  <x-card cardTitle="Detalles categoría">
      <x-slot:cardTools>
          <a href="{{ route('categories') }}" class="btn btn-primary">

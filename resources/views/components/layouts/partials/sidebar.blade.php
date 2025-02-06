@@ -27,7 +27,7 @@
 
                 <li class="nav-item">
                     <a href="{{ route('inicio') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
                             Inicio
                         </p>
