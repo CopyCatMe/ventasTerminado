@@ -57,6 +57,7 @@ class ProductComponent extends Component
     //Funciona limpiar modal en crearProducts
     public function create()
     {
+
         /*Si pulsamos en crear, cancelamos, editamos, cancelamos
         y volvemos a crear, me guarda el botón con editar. Para
         obviar este error, se soluciona de la siguiente forma: */

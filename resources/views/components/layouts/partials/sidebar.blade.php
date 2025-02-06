@@ -52,6 +52,24 @@
                   </a>
               </li>
 
+              <li class="nav-item">
+                <a href="{{ route('clients') }}" class="nav-link">
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>
+                        Clientes
+                    </p>
+                </a>
+            </li>
+
+              <li class="nav-item">
+                <a href="{{ route('users') }}" class="nav-link">
+                    <i class="nav-icon fas fa-users"></i>
+                    <p>
+                        Usuarios
+                    </p>
+                </a>
+            </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

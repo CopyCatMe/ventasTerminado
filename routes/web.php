@@ -2,9 +2,14 @@
 
 use App\Livewire\Category\CategoryComponent;
 use App\Livewire\Category\CategoryShow;
+use App\Livewire\Client\ClientComponent;
+use App\Livewire\Client\ClientShow;
 use App\Livewire\Home\Inicio;
 use App\Livewire\Product\ProductComponent;
 use App\Livewire\Product\ProductShow;
+use App\Livewire\User\UserComponent;
+use App\Livewire\User\UserShow;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +35,15 @@ Route::get('/products', ProductComponent::class)->name('products');
 
 //Ruta para ver los productos (icono ojito)
 Route::get('/products/{product}', ProductShow::class)->name('products.show');
+
+//Ruta para los usuarios
+Route::get('/users', UserComponent::class)->name('users');
+
+//Ruta para ver los usuario (icono ojito)
+Route::get('/users/{user}', UserShow::class)->name('user.show');
+
+//Ruta para los clientes
+Route::get('/clients', ClientComponent::class)->name('clients');
+
+//Ruta para ver los clientes (icono ojito)
+Route::get('/clients/{client}', ClientShow::class)->name('client.show');
