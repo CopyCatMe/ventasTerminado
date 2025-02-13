@@ -1,9 +1,9 @@
-{{-- <x-modal modalId="modalUsers" modalTitle="Usuarios" modalSize="modal-lg">
+<x-modal modalId="modalClients" modalTitle="Clientes" modalSize="modal-lg">
     <form wire:submit={{ $Id == 0 ? 'store' : "update($Id)" }}>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="name">Nombre:</label>
-                <input wire:model='name' id="name" type="text" class="form-control" placeholder="Nombre de usuario">
+                <input wire:model='name' id="name" type="text" class="form-control" placeholder="Nombre del cliente">
                 @error('name')
                     <div class="alert alert-danger w-100 mt-2">
                         {{ $message }}
@@ -13,7 +13,7 @@
 
             <div class="form-group col-md-6">
                 <label for="email">Email:</label>
-                <input wire:model='email' id="email" type="email" class="form-control" placeholder="Email">
+                <input wire:model='email' id="email" type="email" class="form-control" placeholder="Email del cliente">
                 @error('email')
                     <div class="alert alert-danger w-100 mt-2">
                         {{ $message }}
@@ -22,9 +22,9 @@
             </div>
 
             <div class="form-group col-md-6">
-                <label for="password">Contraseña:</label>
-                <input wire:model='password' id="password" type="password" class="form-control" placeholder="Contraseña">
-                @error('password')
+                <label for="telephone">Teléfono:</label>
+                <input wire:model='telephone' id="telephone" type="text" class="form-control" placeholder="Teléfono del cliente">
+                @error('telephone')
                     <div class="alert alert-danger w-100 mt-2">
                         {{ $message }}
                     </div>
@@ -32,43 +32,19 @@
             </div>
 
             <div class="form-group col-md-6">
-                <label for="password_confirmation">Confirmar Contraseña:</label>
-                <input wire:model='password_confirmation' id="password_confirmation" type="password" class="form-control" placeholder="Confirmar contraseña">
-                @error('password_confirmation')
+                <label for="identify">Identificación:</label>
+                <input wire:model='identify' id="identify" type="text" class="form-control" placeholder="Identificación del cliente">
+                @error('identify')
                     <div class="alert alert-danger w-100 mt-2">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
 
-            <div class="form-group col-md-6">
-                <div class="icheck-primary">
-                    <input wire:model='admin' type="checkbox" id="admin" {{ $admin == 1 ? 'checked' : '' }}>
-                    <label for="admin">
-                        ¿Es administrador?
-                    </label>
-                </div>
-                @error('admin')
-                    <div class="alert alert-danger w-100 mt-2">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="form-group col-md-6">
-                <div class="icheck-primary">
-                    <input wire:model='active' type="checkbox" id="active" {{ $active == 1 ? 'checked' : '' }}>
-                    <label for="active">
-                        ¿Está activo?
-                    </label>
-                </div>
-                @error('active')
-                    <div class="alert alert-danger w-100 mt-2">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-                @error('active')
+            <div class="form-group col-md-12">
+                <label for="company">Empresa:</label>
+                <input wire:model='company' id="company" type="text" class="form-control" placeholder="Nombre de la empresa">
+                @error('company')
                     <div class="alert alert-danger w-100 mt-2">
                         {{ $message }}
                     </div>
@@ -81,4 +57,4 @@
         </button>
     </form>
 </x-modal>
- --}}
+

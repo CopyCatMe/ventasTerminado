@@ -12,9 +12,10 @@ use App\Livewire\User\UserShow;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('inicio');
 });
 
 Auth::routes();
@@ -23,6 +24,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Ruta para el inicio
 Route::get('/inicio', Inicio::class)->name('inicio');
+
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/login'); // Redirige a la página de login después del logout
+})->name('logout');
+
 
 //Ruta para la categoria
 Route::get('/categories', CategoryComponent::class)->name('categories');

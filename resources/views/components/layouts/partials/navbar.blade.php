@@ -5,7 +5,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">{{ $title }}</a>
       </li>
 
     </ul>
@@ -16,11 +16,7 @@
       <li class="nav-item">
           <form action="simple-results.html">
             <div class="input-group">
-                <input type="search" class="form-control" placeholder="Buscar Producto...">
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fa fa-search"></i>
-                    </button>
                 </div>
             </div>
         </form>
@@ -29,7 +25,13 @@
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           <img src="{{asset('dist/img/avatar5.png')}}" class="user-image img-circle elevation-2" alt="User Image">
-          <span class="d-none d-md-inline">Name</span>
+          <span class="d-none d-md-inline">
+            @if(auth()->check())
+              {{ auth()->user()->name }}
+            @else
+              Usuario no autenticado
+            @endif
+          </span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px;">
           <!-- User image -->
@@ -37,20 +39,25 @@
             <img src="{{asset('dist/img/avatar5.png')}}" class="img-circle elevation-2" alt="User Image">
   
             <p>
-              Name
-              <small>Cargo</small>
-            </p>
-          </li>
-          <!-- Menu Body -->
+              @if(auth()->check())
+                {{ auth()->user()->name }}
+                <small>{{ auth()->user()->admin ? 'Administrador' : 'Vendedor' }}</small>
+              @else
+                Usuario no autenticado
+              @endif
   
           <!-- Menu Footer-->
           <li class="user-footer">
-            <a class="btn btn-default btn-flat">Perfil</a>
-            <a class="btn btn-default btn-flat float-right" href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">
-             Salir
-         </a>
+            <a class="btn btn-default btn-flat" href="{{ auth()->check() ? '/home' : '/login' }}">
+              {{ auth()->check() ? 'Perfil' : 'Login' }}
+            </a>
+            @if (auth()->check())
+              <a class="btn btn-default btn-flat float-right" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+               Salir
+             </a>
+            @endif
   
          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
              @csrf

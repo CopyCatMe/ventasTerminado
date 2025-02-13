@@ -1,23 +1,20 @@
 <div>
     <h1>Inicio</h1>
 
-    <x-card cardTitle="Card Title"
-            cardTools="Card Tools"
-            cardFooter="Card Footer">
-        <x-slot:cardTools>
-            <a href="#" class="btn btn-primary"> Crear </a>
-        </x-slot:cardTools>
+    <x-card cardTitle="Bienvenido al sistema de ventas">
+        @if (auth()->check())
+            <p>
+                Hola {{ auth()->user()->name }}, en este sistema podrás administrar tus ventas, productos, categorías, 
+                clientes y usuarios. 
+            </p>
+        @else
+            <p>
+                Bienvenido al sistema de ventas, si no estás registrado, 
+                <a href="{{ route('register') }}">
+                    haz clic aquí para registrarte
+                </a>
+            </p>
+        @endif
 
-        <x-table>
-            <x-slot:thead>
-                <th>thead</th>
-                <th>thead</th>
-            </x-slot:thead>
-                
-            <tr>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-        </x-table>
     </x-card>
 </div>

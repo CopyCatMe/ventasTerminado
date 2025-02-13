@@ -4,7 +4,7 @@ namespace App\Livewire\Home;
 
 use Livewire\Attributes\Title;
 use Livewire\Component;
-#[Title('Inicio Test')]
+#[Title('Inicio')]
 
 class Inicio extends Component
 {
