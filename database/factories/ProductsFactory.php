@@ -21,13 +21,12 @@ class ProductsFactory extends Factory
             'description' => $this->faker->text(100),
             'purchase_price' => $this->faker->randomFloat(2, 1, 100),
             'selling_price' => $this->faker->randomFloat(2, 1, 100),
-            'stock' => $this->faker->randomNumber(3,true),
-            'min_stock' =>$this->faker->randomNumber(2,true),
+            'stock' => $this->faker->randomNumber(3, true),
+            'min_stock' => $this->faker->randomNumber(2, true),
             'bar_code' => $this->faker->ean13(),
-            'expiration_date' => $this->faker->date('Y-m-d'),
+            'expiration_date' => $this->faker->dateTimeBetween('2025-03-01', '2028-12-31')->format('Y-m-d'),
             'active' => $this->faker->boolean(),
-            'category_id' => $this->faker->numberBetween(1,\App\Models\Category::count())
+            'category_id' => $this->faker->numberBetween(1, \App\Models\Category::count())
         ];
-        
     }
 }
